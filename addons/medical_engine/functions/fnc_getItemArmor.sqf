@@ -16,7 +16,7 @@
  * Public: No
  */
 
-params ["_item", "_hitpoint"];
+params ["_unit","_item", "_hitpoint"];
 
 private _key = format ["%1$%2", _item, _hitpoint];
 private _return = GVAR(armorCache) get _key;
@@ -40,14 +40,26 @@ if (isNil "_return") then {
             _armor = getNumber (_unitCfg >> "armorStructural");
         } else {
             private _entry = _unitCfg >> "HitPoints" >> _hitpoint;
-            _armor = getNumber (_unitCfg >> "armor") * (1 max getNumber (_entry >> "armor"));
+            private _overwrittenArmor = [_unit, _hitpoint] call FUNC(getOverwrittenArmorValue);
+            if (isNil "_overwrittenArmor") then {
+                _armor = getNumber (_unitCfg >> "armor") * (1 max getNumber (_entry >> "armor"));
+            } else {
+                _armor = _overwrittenArmor
+            };
             _passThrough = 0.1 max getNumber (_entry >> "passThrough") min 1; // prevent dividing by 0
         };
     } else {
         private _condition = format ["getText (_x >> 'hitpointName') == '%1'", _hitpoint];
         private _entry = configProperties [_itemInfo >> "HitpointsProtectionInfo", _condition] param [0, configNull];
         if (!isNull _entry) then {
-            _armor = getNumber (_entry >> "armor");
+            
+            private _overwrittenArmor = [_unit, _hitpoint] call FUNC(getOverwrittenArmorValue);
+            if (isNil "_overwrittenArmor") then {
+                _armor = getNumber (_entry >> "armor");
+            } else {
+                _armor = _overwrittenArmor
+            };
+
             _passThrough = 0.1 max getNumber (_entry >> "passThrough") min 1;
         };
     };

@@ -39,7 +39,7 @@ if (_rags != _prevRags) then {
     _armorScaled = 0;
 
     {
-        ([_x, _hitpoint] call FUNC(getItemArmor)) params ["_itemArmor", "_itemArmorScaled"];
+        ([unit, _x, _hitpoint] call FUNC(getItemArmor)) params ["_itemArmor", "_itemArmorScaled"];
         _armor = _armor + _itemArmor;
         _armorScaled = _armorScaled + _itemArmorScaled;
     } forEach _gear;
