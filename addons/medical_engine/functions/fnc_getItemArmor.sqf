@@ -11,7 +11,7 @@
  * Regular and scaled item armor for the given hitpoint <ARRAY of NUMBER>
  *
  * Example:
- * ["V_PlateCarrier_rgr", "HitChest"] call ace_medical_engine_fnc_getItemArmor
+ * [unit, "V_PlateCarrier_rgr", "HitChest"] call ace_medical_engine_fnc_getItemArmor
  *
  * Public: No
  */
@@ -40,7 +40,7 @@ if (isNil "_return") then {
             _armor = getNumber (_unitCfg >> "armorStructural");
         } else {
             private _entry = _unitCfg >> "HitPoints" >> _hitpoint;
-            private _overwrittenArmor = [_unit, _hitpoint] call FUNC(getOverwrittenArmorValue);
+            private _overwrittenArmor = [_unit, _hitpoint] call EFUNC(armor_overwrite,getOverwrittenArmorValue);
             if (isNil "_overwrittenArmor") then {
                 _armor = getNumber (_unitCfg >> "armor") * (1 max getNumber (_entry >> "armor"));
             } else {
@@ -53,7 +53,7 @@ if (isNil "_return") then {
         private _entry = configProperties [_itemInfo >> "HitpointsProtectionInfo", _condition] param [0, configNull];
         if (!isNull _entry) then {
             
-            private _overwrittenArmor = [_unit, _hitpoint] call FUNC(getOverwrittenArmorValue);
+            private _overwrittenArmor = [_unit, _hitpoint] call EFUNC(armor_overwrite,getOverwrittenArmorValue);
             if (isNil "_overwrittenArmor") then {
                 _armor = getNumber (_entry >> "armor");
             } else {

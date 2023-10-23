@@ -3,7 +3,6 @@ PREP(damageBodyPart);
 PREP(disableThirdParty);
 PREP(getHitpointArmor);
 PREP(getItemArmor);
-PREP(getOverwrittenArmorValue);
 PREP(handleDamage);
 PREP(lockUnconsciousSeat);
 PREP(setStructuralDamage);

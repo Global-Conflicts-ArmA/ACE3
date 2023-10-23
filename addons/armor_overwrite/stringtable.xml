@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACE">
+    <Package name="Armor_Overwrite">
+
+ 
+        <Key ID="STR_ACE_Armor_Overwrite_Category">
+            <English>Armor Overwrite</English>
+        </Key>
+        <Key ID="STR_ACE_Armor_Overwrite_EnableArmorOverwrites_displayName">
+            <English>Enable the Armor Overwrite system</English>
+        </Key>
+        <Key ID="STR_ACE_Armor_Overwrite_EnableArmorOverwrites_Description">
+            <English>Controls whether the custom armor values will be applied.</English>
+        </Key>
+    </Package>
+</Project>
