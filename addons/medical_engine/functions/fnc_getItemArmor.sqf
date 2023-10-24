@@ -56,16 +56,11 @@ if (isNil "_return") then {
     // Skip scaling for items that don't cover the hitpoint to prevent infinite armor
 
     if (_armor isNotEqualTo 0) then {
-        private _maxArmor = EGVAR(medical,maxArmor);
-        private _minArmor = EGVAR(medical,minArmor);
-        if (_armor > _maxArmor) then {
-            _armor = _maxArmor;
-        } else {
-            if (_armor < _minArmor) then {
-            _armor = _minArmor;
-            };
-        }; 
-         _armorScaled = (log (_armor / _passThrough)) * 10;
+        _armor = EGVAR(medical,maxArmor) min _armor max EGVAR(medical,minArmor);
+        _armorScaled = (log (_armor / _passThrough)) * 10;
+        TRACE_3("ARMOR_RESULT",_armor,_armorScaled,_hitpoint);
+        _return = [_armor, _armorScaled];
+        GVAR(armorCache) set [_key, _return];
     };
     TRACE_3("ARMOR_RESULT",_armor,_armorScaled,_hitpoint);
     _return = [_armor, _armorScaled];
