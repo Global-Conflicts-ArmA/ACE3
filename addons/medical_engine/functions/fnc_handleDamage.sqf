@@ -36,6 +36,21 @@ private _newDamage = _damage - _oldDamage;
 // We scale using passThrough to handle explosive-resistant armor properly (#9063)
 // We need realDamage to determine which limb was hit correctly
 [_unit, _hitpoint] call FUNC(getHitpointArmor) params ["_armor", "_armorScaled"];
+private _maxArmor = EGVAR(medical,maxArmor);
+private _minArmor = EGVAR(medical,minArmor);
+
+TRACE_1("ORIGINAL_ARMOR_VALUE",_armor);
+if (_maxArmor > 0 && {_minArmor > 0}) then {
+    _armor =  _minArmor max _armor min _maxArmor;
+};
+if (_maxArmor > 0 && {_minArmor == 0} ) then {
+    _armor =  _armor min _maxArmor;
+};
+if (_maxArmor == 0 && {_minArmor > 0} ) then {
+    _armor =  _minArmor max _armor;
+};
+TRACE_1("NEW_ARMOR_VALUE",_armor);
+
 private _realDamage = _newDamage * _armor;
 if (_hitPoint isNotEqualTo "#structural") then {
     private _armorCoef = _armor/_armorScaled;

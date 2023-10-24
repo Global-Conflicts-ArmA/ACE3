@@ -817,5 +817,26 @@
             <Chinesesimp>死于致命伤的概率。</Chinesesimp>
             <Korean>치명상으로 인해 사망할 확률을 정합니다.</Korean>
         </Key>
+
+
+         <Key ID="STR_ACE_Medical_Damage_maxArmor_DisplayName">
+            <English>Maximum armor value</English>
+            <Portuguese>Valor máximo da armadura</Portuguese>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_maxArmor_Description">
+            <English>Caps the armor value of any equipment with armor values to this value. No armor value will be bigger than this value.\nUse 0 to disable this feature.\nOnly touch this if you know what you're doing!</English>
+            <Portuguese>Limita o valor de armadura de qualquer equipamento com valores de armadura para esse valor. Nenhum valor de armadura irá ultrapassar esse valor.\nUse 0 para desabilitar essa funcionalidade.\nSó mecha nisso se você sabe o que está fazendo!</Portuguese>
+        </Key>
+
+           <Key ID="STR_ACE_Medical_Damage_minArmor_DisplayName">
+            <English>Minimum armor value</English>
+            <Portuguese>Valor mínimo da armadura</Portuguese>
+        </Key>
+        <Key ID="STR_ACE_Medical_Damage_MinArmor_Description">
+            <English>Sets a minimum armor value of any aquipment with armor values to this value. No armor value will be smaller than this value.\nUse 0 to disable this feature.\nOnly touch this if you know what you're doing!</English>
+            <Portuguese>Determina um valor mínimo de armadura para qualquer equipamento com valores de armadura. Nenhum valor de armadura irá ser menor que esse valor.\nUse 0 para desabilitar essa funcionalidade.\nSó mecha nisso se você sabe o que está fazendo!</Portuguese>
+        </Key>
+
+
     </Package>
 </Project>

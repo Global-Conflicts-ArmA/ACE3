@@ -51,3 +51,22 @@
     [0, 1, 1, 2, true],
     true
 ] call CBA_fnc_addSetting;
+
+
+[
+    QEGVAR(medical,maxArmor),
+    "SLIDER",
+    [LSTRING(maxArmor_DisplayName), LSTRING(maxArmor_Description)],
+    ELSTRING(medical,Category),
+    [0, 50, 0, 0, false]
+] call CBA_fnc_addSetting;
+
+[
+    QEGVAR(medical,minArmor),
+    "SLIDER",
+    [LSTRING(minArmor_DisplayName), LSTRING(minArmor_Description)],
+    ELSTRING(medical,Category),
+    [0, 50, 0, 0, false]
+] call CBA_fnc_addSetting;
+
+ 
