@@ -24,5 +24,5 @@ if ((!_enable) || {_intensity == 0}) exitWith {
 };
 
 GVAR(ppBloodVolume) ppEffectEnable true;
-GVAR(ppBloodVolume) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0],  [1, 1, 1, 1 - _intensity],  [0.2, 0.2, 0.2, 0]];
+GVAR(ppBloodVolume) ppEffectAdjust [1, (1-_intensity), 0, [0, 0, 0, _intensity],  [(1+(_intensity*2)), 1, 1, (1 - _intensity)],  [4, -1.5, -1.5, 0]];
 GVAR(ppBloodVolume) ppEffectCommit 1;
