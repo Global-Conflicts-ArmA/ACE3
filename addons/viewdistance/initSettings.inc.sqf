@@ -12,7 +12,7 @@ private _category = format ["ACE %1", localize LSTRING(Module_DisplayName)];
     QGVAR(viewDistanceOnFoot), "SLIDER",
     [LSTRING(onFoot_DisplayName), format ["%1\n%2", LLSTRING(onFoot_Description), LLSTRING(sliderExtraDescription)]],
     _category,
-    [0, 40000, 0, -1],
+    [0, 20000, 0, -1],
     0,
     {[true] call FUNC(adaptViewDistance)}
 ] call CBA_fnc_addSetting;
@@ -21,7 +21,7 @@ private _category = format ["ACE %1", localize LSTRING(Module_DisplayName)];
     QGVAR(viewDistanceLandVehicle), "SLIDER",
     [LSTRING(landVehicle_DisplayName), format ["%1\n%2", LLSTRING(landVehicle_Description), LLSTRING(sliderExtraDescription)]],
     _category,
-    [0, 40000, 0, -1],
+    [0, 20000, 0, -1],
     0,
     {[true] call FUNC(adaptViewDistance)}
 ] call CBA_fnc_addSetting;
@@ -30,7 +30,7 @@ private _category = format ["ACE %1", localize LSTRING(Module_DisplayName)];
     QGVAR(viewDistanceAirVehicle), "SLIDER",
     [LSTRING(airVehicle_DisplayName), format ["%1\n%2", LLSTRING(airVehicle_Description), LLSTRING(sliderExtraDescription)]],
     _category,
-    [0, 40000, 0, -1],
+    [0, 20000, 0, -1],
     0,
     {[true] call FUNC(adaptViewDistance)}
 ] call CBA_fnc_addSetting;
@@ -39,7 +39,7 @@ private _category = format ["ACE %1", localize LSTRING(Module_DisplayName)];
     QGVAR(limitViewDistance), "SLIDER",
     [LSTRING(limit_DisplayName), LSTRING(limit_setting)],
     _category,
-    [500, 40000, 10000, -1],
+    [500, 20000, 10000, -1],
     0,
     {[true] call FUNC(adaptViewDistance)}
 ] call CBA_fnc_addSetting;
