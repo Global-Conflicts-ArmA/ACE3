@@ -67,7 +67,7 @@ if (_init) then {
 
     // Cache view distance and set spectator default
     GVAR(oldViewDistance) = viewDistance;
-    setViewDistance DEFAULT_VIEW_DISTANCE;
+    // setViewDistance DEFAULT_VIEW_DISTANCE;
 
     // If counter already exists handle it, otherwise display XEH will handle it
     [GETUVAR(RscRespawnCounter,displayNull)] call FUNC(compat_counter);
